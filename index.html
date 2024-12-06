@@ -7,6 +7,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Калькулятор рассчёта стоимости доставки посылок</h1>
+    </header>
+    <main>
+      <div class="main">
+        <fieldset>
+          <legend>Для выполнения рассчёта необходимо указать данные:</legend>
+          <!-- Расстояние -->
+          <div>
+            <form id="distForm">
+              <label for="dist"
+                >Запишите расстояние доставки, в километрах и нажмите
+                "Ввод"</label
+              >
+              <input type="number" name="Расстояние" id="dist" />
+              <button
+                type="button"
+                class="button"
+                onclick="calculateDelivery()"
+              >
+                Ввод
+              </button>
+            </form>
+          </div>
+          <!-- Тип доставки -->
+          <div>
+            <form id="typeForm">
+              <label for="type">Выберите тип доставки:</label>
+              <select id="type" name="typeDelivery">
+                <option value="standardDeliv">standard</option>
+                <option value="expressDeliv">express</option>
+              </select>
+              <button
+                type="button"
+                class="button"
+                onclick="calculateDelivery()"
+              >
+                Ввод
+              </button>
+            </form>
+          </div>
+          <!-- Тип упаковки -->
+          <div>
+            <form id="packForm">
+              <label for="pack"
+                >Поставьте галочку если упаковка праздничная и нажмите
+                "Ввод"</label
+              >
+              <input type="checkbox" name="Тип упаковки" id="pack" />
+              <button
+                type="button"
+                class="button"
+                onclick="calculateDelivery()"
+              >
+                Ввод
+              </button>
+            </form>
+          </div>
+        </fieldset>
+        <!-- Рассчитать -->
+        <div>
+          <button type="button" id="calc" onclick="calculateDelivery()">
+            Рассчитать стоимость доставки
+          </button>
+        </div>
+      </div>
+      <!-- Объявление результата -->
+      <div class="main" id="cost"></div>
+      <!-- <h2>Стоимость доставки:</h2> -->
+    </main>
+    <footer></footer>
     <script src="script.js"></script>
   </body>
 </html>
