@@ -1,3 +1,4 @@
+let packing = confirm("Посылка в праздничной упаковке ?");
 function calculateDelivery(distance, typeDelivery, packing) {
   const tarif = 5;
   let ratioDelivery = null;
@@ -9,10 +10,10 @@ function calculateDelivery(distance, typeDelivery, packing) {
     ratioDelivery = 1.3;
   }
 
-  if (packing === false) {
-    ratioPacking = 0;
-  } else {
+  if (packing) {
     ratioPacking = 15;
+  } else {
+    ratioPacking = 0;
   }
 
   return distance * tarif * ratioDelivery + ratioPacking;
