@@ -1,4 +1,12 @@
-let packing = confirm("Посылка в праздничной упаковке ?");
+let distance = document.getElementById("distForm");
+let typeDelivery = document.getElementById("typeForm");
+let packing = document.getElementById("packForm");
+let calc = document.getElementById("calc");
+// let cost = document.getElementById("cost");
+
+// Вёрстка страницы
+
+// Рассчёт доставки
 function calculateDelivery(distance, typeDelivery, packing) {
   const tarif = 5;
   let ratioDelivery = null;
@@ -16,10 +24,12 @@ function calculateDelivery(distance, typeDelivery, packing) {
     ratioPacking = 0;
   }
 
-  return distance * tarif * ratioDelivery + ratioPacking;
+  // return distance * tarif * ratioDelivery + ratioPacking;
+  console.log(distance * tarif * ratioDelivery + ratioPacking);
 }
 
-console.log(calculateDelivery(10, "standard", false));
-console.log(calculateDelivery(10, "standard", true));
-console.log(calculateDelivery(10, "express", false));
-console.log(calculateDelivery(10, "express", true));
+// cost.innerHTML = ("<h2>Стоимость доставки: </h2>", calculateDelivery());
+
+// console.log(cost);
+
+calculateDelivery();
