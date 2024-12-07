@@ -7,6 +7,56 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Калькулятор рассчёта стоимости доставки посылок</h1>
+    </header>
+    <main>
+      <div class="main">
+        <fieldset>
+          <legend>Для выполнения рассчёта необходимо указать данные:</legend>
+          <!-- Расстояние -->
+          <div>
+            <form id="distForm">
+              <label for="dist"
+                >Запишите расстояние доставки, в километрах:</label
+              >
+              <input type="number" name="Расстояние" id="dist" required />
+            </form>
+          </div>
+          <!-- Тип доставки -->
+          <div>
+            <form id="typeForm">
+              <label for="type">Выберите тип доставки:</label>
+              <select id="type" name="typeDelivery">
+                <option value="standard">standard</option>
+                <option value="express">express</option>
+              </select>
+            </form>
+          </div>
+          <!-- Тип упаковки -->
+          <div>
+            <form id="packForm">
+              <label for="pack"
+                >Поставьте галочку если упаковка праздничная:</label
+              >
+              <input type="checkbox" name="Тип упаковки" id="pack" />
+            </form>
+          </div>
+        </fieldset>
+        <!-- Рассчитать -->
+        <div>
+          <button type="button" id="calc" onclick="calculateDelivery()">
+            Рассчитать стоимость доставки
+          </button>
+        </div>
+      </div>
+      <!-- Объявление результата -->
+      <div class="main">
+        <h2>Стоимость доставки:</h2>
+        <div id="cost"></div>
+      </div>
+    </main>
+    <footer></footer>
     <script src="script.js"></script>
   </body>
 </html>

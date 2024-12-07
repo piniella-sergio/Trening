@@ -1,24 +1,24 @@
-function calculateDelivery(distance, typeDelivery, packing) {
+// Рассчёт доставки
+function calculateDelivery() {
+  const distance = parseFloat(document.getElementById("dist").value);
+  const typeDelivery = document.getElementById("type").value;
+  const packing = document.getElementById("pack").checked;
+
+  if (isNaN(distance) || distance <= 0) {
+    document.getElementById("cost").innerText =
+      "Пожалуйста, введите корректное расстояние.";
+    return;
+  }
+
+  const cost = getDeliveryCost(distance, typeDelivery, packing);
+  document.getElementById("cost").innerText = cost.toFixed(2) + " руб.";
+}
+
+// Функция для расчёта стоимости
+function getDeliveryCost(distance, typeDelivery, packing) {
   const tarif = 5;
-  let ratioDelivery = null;
-  let ratioPacking = null;
-
-  if (typeDelivery === "standard") {
-    ratioDelivery = 1;
-  } else {
-    ratioDelivery = 1.3;
-  }
-
-  if (packing === false) {
-    ratioPacking = 0;
-  } else {
-    ratioPacking = 15;
-  }
+  let ratioDelivery = typeDelivery === "standard" ? 1 : 1.3;
+  let ratioPacking = packing ? 15 : 0;
 
   return distance * tarif * ratioDelivery + ratioPacking;
 }
-
-console.log(calculateDelivery(10, "standard", false));
-console.log(calculateDelivery(10, "standard", true));
-console.log(calculateDelivery(10, "express", false));
-console.log(calculateDelivery(10, "express", true));
