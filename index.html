@@ -18,17 +18,9 @@
           <div>
             <form id="distForm">
               <label for="dist"
-                >Запишите расстояние доставки, в километрах и нажмите
-                "Ввод"</label
+                >Запишите расстояние доставки, в километрах:</label
               >
-              <input type="number" name="Расстояние" id="dist" />
-              <button
-                type="button"
-                class="button"
-                onclick="calculateDelivery()"
-              >
-                Ввод
-              </button>
+              <input type="number" name="Расстояние" id="dist" required />
             </form>
           </div>
           <!-- Тип доставки -->
@@ -36,33 +28,18 @@
             <form id="typeForm">
               <label for="type">Выберите тип доставки:</label>
               <select id="type" name="typeDelivery">
-                <option value="standardDeliv">standard</option>
-                <option value="expressDeliv">express</option>
+                <option value="standard">standard</option>
+                <option value="express">express</option>
               </select>
-              <button
-                type="button"
-                class="button"
-                onclick="calculateDelivery()"
-              >
-                Ввод
-              </button>
             </form>
           </div>
           <!-- Тип упаковки -->
           <div>
             <form id="packForm">
               <label for="pack"
-                >Поставьте галочку если упаковка праздничная и нажмите
-                "Ввод"</label
+                >Поставьте галочку если упаковка праздничная:</label
               >
               <input type="checkbox" name="Тип упаковки" id="pack" />
-              <button
-                type="button"
-                class="button"
-                onclick="calculateDelivery()"
-              >
-                Ввод
-              </button>
             </form>
           </div>
         </fieldset>
@@ -74,8 +51,10 @@
         </div>
       </div>
       <!-- Объявление результата -->
-      <div class="main" id="cost"></div>
-      <!-- <h2>Стоимость доставки:</h2> -->
+      <div class="main">
+        <h2>Стоимость доставки:</h2>
+        <div id="cost"></div>
+      </div>
     </main>
     <footer></footer>
     <script src="script.js"></script>
